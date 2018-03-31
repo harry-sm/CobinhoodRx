@@ -1,0 +1,34 @@
+{
+    "defaultSeverity": "error",
+    "extends": [
+        "tslint:recommended"
+    ],
+   "rules": {
+		"arrow-parens": false,
+		"eofline": false,
+		"indent": [
+			true,
+			"tabs"
+		],
+		"interface-name": false,
+		"interface-over-type-literal": false,
+		"max-classes-per-file": true,
+		"max-line-length": [true, 130],
+		"member-ordering": [
+			true,
+			{
+				"order": "fields-first"
+			}
+		],
+		"no-parameter-properties": false,
+		"object-literal-sort-keys": false,
+		"only-arrow-functions": false,
+		"ordered-imports": false,
+		"quotemark": [
+			true,
+			"single"
+		],
+		"trailing-comma": false,
+		"variable-name": false
+	}
+}

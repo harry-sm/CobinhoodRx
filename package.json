@@ -1,0 +1,68 @@
+{
+	"name": "cobinhood-rx",
+	"version": "0.1.0",
+	"description": "CobinhoodRx is a rxjs node wrapper for the CobinhoodRx Api.",
+	"scripts": {
+		"build": "tsc",
+		"prepublishOnly": "npm run build",
+		"test": "node -r dotenv/config node_modules/jest/bin/jest --runInBand",
+		"lint": "tslint --project tsconfig.json src/**/*.ts"
+	},
+	"jest": {
+		"moduleFileExtensions": [
+			"ts",
+			"tsx",
+			"js"
+		],
+		"transform": {
+			"\\.(ts|tsx)$": "<rootDir>/node_modules/ts-jest/preprocessor.js"
+		},
+		"testRegex": "/__tests__/.*\\.(ts|tsx|js)$"
+	},
+	"main": "build/index.js",
+	"types": "build/index.d.ts",
+	"author": "Rojay Simpson <harrysmith1991@gmail.com>",
+	"license": "MIT",
+	"homepage": "https://github.com/harry-sm/CobinhoodRx#readme",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/harry-sm/CobinhoodRx.git"
+	},
+	"engines": {
+		"node": ">=8.0.0"
+	},
+	"keywords": [
+		"cobinhood",
+		"cryptocurrency",
+		"exchange",
+		"nodejs",
+		"typescript",
+		"api",
+		"client",
+		"rxjs",
+		"observables",
+		"bitcoin",
+		"altcoin"
+	],
+	"bugs": {
+		"url": "https://github.com/harry-sm/CobinhoodRx/issues"
+	},
+	"dependencies": {
+		"bignumber.js": "^6.0.0",
+		"json2typescript": "^1.0.5",
+		"node-fetch": "^2.0.0",
+		"rxjs": "^5.5.6"
+	},
+	"devDependencies": {
+		"@types/jest": "^22.1.4",
+		"@types/node": "^9.6.1",
+		"@types/node-fetch": "^1.6.7",
+		"dotenv": "^5.0.1",
+		"jest": "^22.4.2",
+		"jest-cli": "^22.4.2",
+		"ts-jest": "^22.4.1",
+		"ts-node": "^5.0.1",
+		"tslint": "^5.9.1",
+		"typescript": "^2.7.2"
+	}
+}
