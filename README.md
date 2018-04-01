@@ -2,9 +2,13 @@
 
 CobinhoodRx is a Reactive library that was built with TypeScript and [rxjs](https://github.com/Reactive-Extensions/RxJS) for the [Cobinhood](https://cobinhood.com/) API which runs on the node.js platform.
 
-~~If TypeScript is not your preferred language you can use [Coinbinhood.Java](https://github.com/jd-alexander)~~
+~~If TypeScript is not your preferred language you can use [Coinbinhood.Java](https://github.com/jd-alexander/Coinbinhood.Java)~~
 
 ---
+[![npm](https://img.shields.io/npm/v/cobinhood-rx.svg)](https://www.npmjs.com/package/cobinhood-rx)
+[![npm](https://img.shields.io/npm/dt/cobinhood-rx.svg)](https://www.npmjs.com/package/cobinhood-rx)
+
+[![David](https://img.shields.io/david/harry-sm/CobinhoodRx.svg)](https://github.com/harry-sm/CobinhoodRx)
 
 ---
 
