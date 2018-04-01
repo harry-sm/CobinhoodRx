@@ -1,6 +1,5 @@
 # CobinhoodRx
 
-[![Greenkeeper badge](https://badges.greenkeeper.io/harry-sm/CobinhoodRx.svg)](https://greenkeeper.io/)
 
 CobinhoodRx is a Reactive library that was built with TypeScript and [rxjs](https://github.com/Reactive-Extensions/RxJS) for the [Cobinhood](https://cobinhood.com/) API which runs on the node.js platform.
 
@@ -9,7 +8,7 @@ CobinhoodRx is a Reactive library that was built with TypeScript and [rxjs](http
 ---
 [![npm](https://img.shields.io/npm/v/cobinhood-rx.svg)](https://www.npmjs.com/package/cobinhood-rx)
 [![npm](https://img.shields.io/npm/dt/cobinhood-rx.svg)](https://www.npmjs.com/package/cobinhood-rx)
-
+[![Greenkeeper badge](https://badges.greenkeeper.io/harry-sm/CobinhoodRx.svg)](https://greenkeeper.io/)
 [![David](https://img.shields.io/david/harry-sm/CobinhoodRx.svg)](https://github.com/harry-sm/CobinhoodRx)
 
 ---
