@@ -2,7 +2,7 @@ import { Logger } from '../Helpers/Logger';
 import { LogTypeValue } from '../Enum';
 import { Utilities } from '../Helpers/Utilities';
 
-import { HttpClient } from '../connection/HttpClient';
+import { HttpClient } from '../Connection/HttpClient';
 import { TransportConnector } from '../Helpers/TransportConnector';
 import { DefaultSettings } from '../Model/DefaultSettings';
 import { CobinhoodRxSettings } from '../Model/CobinhoodRxSettings';
