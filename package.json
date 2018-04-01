@@ -6,7 +6,9 @@
 		"build": "tsc",
 		"prepublishOnly": "npm run build",
 		"test": "node -r dotenv/config node_modules/jest/bin/jest --runInBand",
-		"lint": "tslint --project tsconfig.json src/**/*.ts"
+		"lint": "tslint --project tsconfig.json src/**/*.ts",
+		"precommit": "npm run lint",
+		"prepush": "npm-run-all --parallel test lint"
 	},
 	"jest": {
 		"moduleFileExtensions": [
@@ -58,8 +60,10 @@
 		"@types/node": "^9.6.1",
 		"@types/node-fetch": "^1.6.7",
 		"dotenv": "^5.0.1",
+		"husky": "^0.14.3",
 		"jest": "^22.4.2",
 		"jest-cli": "^22.4.2",
+		"npm-run-all": "^4.1.2",
 		"ts-jest": "^22.4.1",
 		"ts-node": "^5.0.1",
 		"tslint": "^5.9.1",
