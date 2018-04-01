@@ -1,6 +1,6 @@
-import { Logger } from '../Helpers/logger';
+import { Logger } from '../Helpers/Logger';
 import { LogTypeValue } from '../Enum';
-import { Utilities } from '../Helpers/utilities';
+import { Utilities } from '../Helpers/Utilities';
 
 import { HttpClient } from '../connection/HttpClient';
 import { TransportConnector } from '../Helpers/TransportConnector';
