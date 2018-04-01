@@ -1,6 +1,6 @@
-import { CobinhoodRxClient } from '../../../core/CobinhoodRxClient';
+import { CobinhoodRxClient } from '../../../Core/CobinhoodRxClient';
 import { BigNumber } from 'bignumber.js';
-import { LogTypeValue } from '../../../enum';
+import { LogTypeValue } from '../../../Enum';
 
 describe('Market Methods', () => {
 	let cbrx: CobinhoodRxClient;

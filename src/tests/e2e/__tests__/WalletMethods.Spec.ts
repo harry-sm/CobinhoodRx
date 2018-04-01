@@ -1,6 +1,6 @@
-import { CobinhoodRxClient } from '../../../core/CobinhoodRxClient';
+import { CobinhoodRxClient } from '../../../Core/CobinhoodRxClient';
 import { BigNumber } from 'bignumber.js';
-import { LogTypeValue } from '../../../Enum/LogTypeValue';
+import { LogTypeValue } from '../../../Enum';
 import { ApiCredentialsSettings } from '../../../Helpers/ApiCredentialsSettings';
 
 describe('Wallet Methods', () => {

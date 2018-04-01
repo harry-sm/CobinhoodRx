@@ -3,7 +3,7 @@ import fetch from 'node-fetch';
 
 import { ApiResponse } from '../Model';
 import { LogTypeValue } from '../Enum';
-import { Logger } from '../helpers/logger';
+import { Logger } from '../Helpers/logger';
 
 export class HttpClient {
 	public request(url: string, options?): Observable<ApiResponse> {

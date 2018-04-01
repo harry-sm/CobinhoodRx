@@ -11,12 +11,9 @@ export class CurrencyConverter implements JsonCustomConvert<CurrencyData[]> {
 	public deserialize(data: any): any {
 		const jsc: JsonConvert = new JsonConvert();
 		const arrayData = Object.values(data);
-		// console.log('convert ', arrayData);
 
 		return arrayData.map(item => {
-			// console.log('convert ', item);
 			return jsc.deserialize(item, MarketStats);
 		});
-		// return jsc.deserialize(data, OrderbookData);
 	}
 }

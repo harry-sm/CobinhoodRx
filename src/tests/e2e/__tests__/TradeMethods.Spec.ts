@@ -1,8 +1,8 @@
-import { CobinhoodRxClient } from '../../../core/CobinhoodRxClient';
+import { CobinhoodRxClient } from '../../../Core/CobinhoodRxClient';
 import { BigNumber } from 'bignumber.js';
-import { LogTypeValue } from '../../../Enum/LogTypeValue';
+import { LogTypeValue } from '../../../Enum';
 import { ApiCredentialsSettings } from '../../../Helpers/ApiCredentialsSettings';
-import { PlaceOrderTypeValue } from '../../../Enum/PlaceOrderTypeValue';
+import { PlaceOrderTypeValue } from '../../../Enum';
 
 describe('Trade Methods', () => {
 	let cbrx: CobinhoodRxClient;

@@ -1,4 +1,4 @@
-import { LogTypeValue } from '../enum';
+import { LogTypeValue } from '../Enum';
 
 export class CobinhoodRxSettings {
 	public token?: string;

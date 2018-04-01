@@ -1,6 +1,6 @@
 import { Observable } from 'rxjs';
 import * as Model from '../Model';
-import { PlaceOrderTypeValue } from '../Enum/PlaceOrderTypeValue';
+import { PlaceOrderTypeValue } from '../Enum';
 
 export interface ITrade {
 	getOrder(orderId: string): Observable<Model.Order>;

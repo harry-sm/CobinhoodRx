@@ -1,6 +1,6 @@
 import { Observable } from 'rxjs';
 import * as Model from '../Model';
-import { TimeframeValue } from '../Enum/TimeframeValue';
+import { TimeframeValue } from '../Enum';
 
 export interface IChart {
 	/**

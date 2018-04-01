@@ -1,6 +1,6 @@
 import { Observable } from 'rxjs';
 import * as Model from '../Model';
-import { WithdrawalStatusValue } from '..';
+import { WithdrawalStatusValue } from '../Enum';
 
 export interface IWallet {
 	getWalletBalances(): Observable<Model.Balance[]>;

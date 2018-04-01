@@ -1,4 +1,4 @@
-import { Utilities } from '../../../helpers/utilities';
+import { Utilities } from '../../../Helpers/Utilities';
 
 describe('Utility Methods', () => {
 

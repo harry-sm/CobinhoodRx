@@ -1,7 +1,7 @@
-import { CobinhoodRxClient } from '../../../core/CobinhoodRxClient';
+import { CobinhoodRxClient } from '../../../Core/CobinhoodRxClient';
 import { BigNumber } from 'bignumber.js';
-import { TimeframeValue } from '../../../Enum/TimeframeValue';
-import { LogTypeValue } from '../../../enum';
+import { TimeframeValue } from '../../../Enum';
+import { LogTypeValue } from '../../../Enum';
 
 describe('Chart Methods', () => {
 	let cbrx: CobinhoodRxClient;

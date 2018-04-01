@@ -1,5 +1,5 @@
-import { CobinhoodRxClient } from '../../../core/CobinhoodRxClient';
-import { LogTypeValue } from '../../../enum';
+import { CobinhoodRxClient } from '../../../Core/CobinhoodRxClient';
+import { LogTypeValue } from '../../../Enum';
 
 describe('System Methods', () => {
 	let cbrx: CobinhoodRxClient;
