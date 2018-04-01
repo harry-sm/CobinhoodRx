@@ -1,6 +1,6 @@
 {
 	"name": "cobinhood-rx",
-	"version": "0.1.0",
+	"version": "0.1.1",
 	"description": "CobinhoodRx is a rxjs node wrapper for the CobinhoodRx Api.",
 	"scripts": {
 		"build": "tsc",
