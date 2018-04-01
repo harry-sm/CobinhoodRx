@@ -20,5 +20,9 @@ Soon we hope.
 
 #### Why donate?
 
-Don't, pretend you accidentally clicked a few things you shouldn't have and a donation was the outcome 👀😈
-.
+Don't, pretend you accidentally clicked a few things you shouldn't have and a donation was the outcome 👀😈.
+
+---
+[![Donate with Bitcoin](https://en.cryptobadges.io/badge/micro/138TtdZkyMU8GMY8tzpZuc7xsqrb4CwrGE)](https://en.cryptobadges.io/donate/138TtdZkyMU8GMY8tzpZuc7xsqrb4CwrGE) [![Donate with Ethereum](https://en.cryptobadges.io/badge/micro/0xa02183c9ff9bac839bbd5152d6339a374dfce1c0)](https://en.cryptobadges.io/donate/0xa02183c9ff9bac839bbd5152d6339a374dfce1c0) [![Donate with Litecoin](https://en.cryptobadges.io/badge/micro/LYyvqK2JaLyHo8bv8hrmmt4zsFoemowGSe)](https://en.cryptobadges.io/donate/LYyvqK2JaLyHo8bv8hrmmt4zsFoemowGSe)
+
+---

@@ -8,6 +8,7 @@ If TypeScript is not your preferred language you can use [Coinbinhood.Java](http
 ---
 [![npm](https://img.shields.io/npm/v/cobinhood-rx.svg)](https://www.npmjs.com/package/cobinhood-rx)
 [![npm](https://img.shields.io/npm/dt/cobinhood-rx.svg)](https://www.npmjs.com/package/cobinhood-rx)
+[![Travis](https://img.shields.io/travis/harry-sm/CobinhoodRx.svg)](https://github.com/harry-sm/CobinhoodRx)
 [![Greenkeeper badge](https://badges.greenkeeper.io/harry-sm/CobinhoodRx.svg)](https://greenkeeper.io/)
 [![David](https://img.shields.io/david/harry-sm/CobinhoodRx.svg)](https://github.com/harry-sm/CobinhoodRx)
 
