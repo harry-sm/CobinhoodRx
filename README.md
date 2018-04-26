@@ -3,16 +3,27 @@
 
 CobinhoodRx is a Reactive library that was built with TypeScript and [rxjs](https://github.com/Reactive-Extensions/RxJS) for the [Cobinhood](https://cobinhood.com/) API which runs on the node.js platform.
 
-If TypeScript is not your preferred language you can use [Coinbinhood.Java](https://github.com/jd-alexander/Coinbinhood.Java) another Rx client.
-
 ---
 [![npm](https://img.shields.io/npm/v/cobinhood-rx.svg)](https://www.npmjs.com/package/cobinhood-rx)
 [![npm](https://img.shields.io/npm/dt/cobinhood-rx.svg)](https://www.npmjs.com/package/cobinhood-rx)
 [![Travis](https://img.shields.io/travis/harry-sm/CobinhoodRx.svg)](https://github.com/harry-sm/CobinhoodRx)
 [![Greenkeeper badge](https://badges.greenkeeper.io/harry-sm/CobinhoodRx.svg)](https://greenkeeper.io/)
-[![David](https://img.shields.io/david/harry-sm/CobinhoodRx.svg)](https://github.com/harry-sm/CobinhoodRx)
+[![David](https://img.shields.io/david/harry-sm/CobinhoodRx.svg)](https://david-dm.org/harry-sm/cobinhoodRx)
 
 ---
+
+
+
+## My Other API Clients
+
+- [BittrexRx](https://github.com/harry-sm/BittrexRx) (TypeScript)
+
+- [BittrexRxSharp]( https://github.com/harry-sm/BittrexRxSharp) (C#)
+
+### Other Clients
+- [Coinbinhood.Java](https://github.com/jd-alexander/Coinbinhood.Java) (JAVA)
+- [CryptoExchangeClient](https://github.com/NullVoxPopuli/CryptoExchangeClient) (F#)
+
 
 ## Basic Usage
 `yarn add cobinhood-rx`
