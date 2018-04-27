@@ -21,13 +21,16 @@ describe('Market Methods', () => {
 						expect.arrayContaining([{
 							CryptoCurrency: expect.any(String),
 							Name: expect.any(String),
+							Type: expect.any(String),
 							MinUnit: expect.any(BigNumber),
 							DepositFee: expect.any(BigNumber),
 							WithdrawalFee: expect.any(BigNumber),
 							MinWithdrawal: expect.any(BigNumber),
-							Type: expect.any(String),
-							IsActive: expect.any(Boolean),
-							FundingFrozen: expect.any(Boolean)
+							FundingMinSize: expect.any(BigNumber),
+							InterestIncrement: expect.any(BigNumber),
+							MarginEnabled: expect.any(Boolean),
+							DepositFrozen: expect.any(Boolean),
+							WithdrawalFrozen: expect.any(Boolean)
 						}])
 					);
 					done();

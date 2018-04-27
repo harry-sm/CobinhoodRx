@@ -10,6 +10,9 @@ export class Currency {
 	@JsonProperty('name', String)
 	public Name: string = undefined;
 
+	@JsonProperty('type', String)
+	public Type: string = undefined;
+
 	@JsonProperty('min_unit', BigNumberConverter)
 	public MinUnit: BigNumber = undefined;
 
@@ -22,12 +25,18 @@ export class Currency {
 	@JsonProperty('min_withdrawal', BigNumberConverter)
 	public MinWithdrawal: BigNumber = undefined;
 
-	@JsonProperty('type', String)
-	public Type: string = undefined;
+	@JsonProperty('funding_min_size', BigNumberConverter)
+	public FundingMinSize: BigNumber = undefined;
 
-	@JsonProperty('is_active', Boolean)
-	public IsActive: boolean = undefined;
+	@JsonProperty('interest_increment', BigNumberConverter)
+	public InterestIncrement: BigNumber = undefined;
 
-	@JsonProperty('funding_frozen', Boolean)
-	public FundingFrozen: boolean = undefined;
+	@JsonProperty('margin_enabled', Boolean)
+	public MarginEnabled: boolean = undefined;
+
+	@JsonProperty('deposit_frozen', Boolean)
+	public DepositFrozen: boolean = undefined;
+
+	@JsonProperty('withdrawal_frozen', Boolean)
+	public WithdrawalFrozen: boolean = undefined;
 }
