@@ -8,7 +8,7 @@
 		"test": "node -r dotenv/config node_modules/jest/bin/jest --runInBand",
 		"lint": "tslint --project tsconfig.json src/**/*.ts",
 		"precommit": "npm run lint",
-		"prepush": "npm-run-all --parallel test lint"
+		"prepush": "npm-run-all --parallel lint"
 	},
 	"jest": {
 		"moduleFileExtensions": [
