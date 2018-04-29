@@ -133,10 +133,10 @@ describe('Market Methods', () => {
 
 	describe('# getRecentTrades', () => {
 		it('should return the a list of the most recent trades for a specified trading pair', done => {
-			cbrx.Market.getRecentTrades('BTC-USDT', 1)
+			cbrx.Market.getRecentTrades('BTC-USDT', 2)
 				.subscribe(data => {
 					expect(data).toEqual(
-						expect.objectContaining([{
+						expect.arrayContaining([{
 							Id: expect.any(String),
 							Price: expect.any(BigNumber),
 							Size: expect.any(BigNumber),

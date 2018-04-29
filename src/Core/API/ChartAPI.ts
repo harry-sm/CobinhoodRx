@@ -6,6 +6,7 @@ import { TransportManager } from '../../Helpers/TransportManager';
 import { HttpMethod } from '../../Enum/HttpMethod';
 import { TimeframeValue } from '../../Enum/TimeframeValue';
 import { IChart } from '../../Interfaces/IChart';
+import Validate from '../../Helpers/Validator';
 
 export class ChartAPI implements IChart {
 	private apiVersion: string;
@@ -24,7 +25,7 @@ export class ChartAPI implements IChart {
 		startPeriod?: Date,
 		endPeriod?: Date
 	): Observable<Model.Candle[]> {
-		return this.transportManager.publicRequest(HttpMethod.GET, `${this.baseEndPoint}/candles/${market}`, {
+		return this.transportManager.publicRequest(HttpMethod.GET, `${this.baseEndPoint}/candles/${Validate.market(market)}`, {
 			start_time: (startPeriod) ? startPeriod.valueOf() : undefined,
 			end_time: (endPeriod) ? endPeriod.valueOf() : undefined,
 			timeframe

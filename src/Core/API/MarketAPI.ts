@@ -5,6 +5,7 @@ import { Observable } from 'rxjs/Observable';
 import { TransportManager } from '../../Helpers/TransportManager';
 import { HttpMethod } from '../../Enum/HttpMethod';
 import { IMarket } from '../../Interfaces/IMarket';
+import Validate from '../../Helpers/Validator';
 
 export class MarketAPI implements IMarket {
 	private apiVersion: string;
@@ -30,7 +31,8 @@ export class MarketAPI implements IMarket {
 	}
 
 	public getOrderBook(market: string, limit: number = 10): Observable<Model.Orderbook> {
-		return this.transportManager.publicRequest(HttpMethod.GET, `${this.baseEndPoint}/orderbooks/${market}`, { limit })
+		return this.transportManager.publicRequest(
+			HttpMethod.GET, `${this.baseEndPoint}/orderbooks/${Validate.market(market)}`, Validate.queryObject({ limit }))
 			.map(data => this.transportManager.processResponse(data, Model.Orderbook, DataKeyValues.Orderbook))
 			.catch(this.catchErrorHandler);
 	}
@@ -43,13 +45,17 @@ export class MarketAPI implements IMarket {
 	}
 
 	public getTicker(market: string): Observable<Model.Ticker> {
-		return this.transportManager.publicRequest(HttpMethod.GET, `${this.baseEndPoint}/tickers/${market}`)
+		return this.transportManager.publicRequest(HttpMethod.GET, `${this.baseEndPoint}/tickers/${Validate.market(market)}`)
 			.map(data => this.transportManager.processResponse(data, Model.Ticker, DataKeyValues.Ticker))
 			.catch(this.catchErrorHandler);
 	}
 
 	public getRecentTrades(market: string, limit: number = 10): Observable<Model.RecentTrade[]> {
-		return this.transportManager.publicRequest(HttpMethod.GET, `${this.baseEndPoint}/trades/${market}`, { limit })
+		return this.transportManager.publicRequest(
+			HttpMethod.GET,
+			`${this.baseEndPoint}/trades/${Validate.market(market)}`,
+			Validate.queryObject({ limit })
+		)
 			.map(data => this.transportManager.processResponse(data, Model.RecentTrade, DataKeyValues.Trades))
 			.catch(this.catchErrorHandler);
 	}
