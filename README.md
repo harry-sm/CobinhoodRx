@@ -14,11 +14,6 @@ CobinhoodRx is a Reactive library that was built with TypeScript and [rxjs](http
 
 
 
-## My Other API Clients
-
-- [BittrexRx](https://github.com/harry-sm/BittrexRx) (TypeScript)
-- [BittrexRxSharp]( https://github.com/harry-sm/BittrexRxSharp) (C#)
-
 ### Other Clients
 - [Coinbinhood.Java](https://github.com/jd-alexander/Coinbinhood.Java) (JAVA)
 - [CryptoExchangeClient](https://github.com/NullVoxPopuli/CryptoExchangeClient) (F#)
