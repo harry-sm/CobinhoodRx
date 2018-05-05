@@ -5,18 +5,17 @@ export class Validator {
 		if (isValidMarket(val)) {
 			return val;
 		}
-		throw new Error(`Invalid Market Name. Please ensure that the market name follows the following pattern 'BTC-USDT'`);
+		throw new Error(`Bad Market Name: ${val}. Accepted market name pattern {XXX-XXX}. Eg. 'BTC-USDT'`);
 	}
 
 	public uuid(val: string) {
 		if (isValidUUID(val)) {
 			return val;
 		}
-		throw new Error('Ivalid Id.');
+		throw new Error(`Ivalid Id: ${val}.`);
 	}
 
 	public queryObject(obj) {
-		// console.log(obj);
 		for (const key in obj) {
 			if (obj.hasOwnProperty(key)) {
 				rules[key](obj[key]);
