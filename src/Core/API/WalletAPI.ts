@@ -5,6 +5,7 @@ import { TransportManager } from '../../Helpers/TransportManager';
 import { HttpMethod } from '../../Enum/HttpMethod';
 import { WithdrawalStatusValue } from '../../Enum/WithdrawalStatusValue';
 import { IWallet } from '../../Interfaces/IWallet';
+import Validate from '../../Helpers/Validator';
 
 export class WalletAPI implements IWallet {
 	private apiVersion: string;
@@ -49,7 +50,7 @@ export class WalletAPI implements IWallet {
 	}
 
 	public getDeposit(depositId: string): Observable<Model.Deposit> {
-		return this.transportManager.privateRequest(HttpMethod.GET, `${this.baseEndPoint}/deposits/${depositId}`)
+		return this.transportManager.privateRequest(HttpMethod.GET, `${this.baseEndPoint}/deposits/${Validate.uuid(depositId)}`)
 			.map(data => this.transportManager.processResponse(data, Model.Deposit, DataKeyValues.Deposit))
 			.catch(this.catchErrorHandler);
 	}
@@ -61,7 +62,7 @@ export class WalletAPI implements IWallet {
 	}
 
 	public getWithdrawal(withdrawalId: string): Observable<Model.Withdrawal> {
-		return this.transportManager.privateRequest(HttpMethod.GET, `${this.baseEndPoint}/withdrawals/${withdrawalId}`)
+		return this.transportManager.privateRequest(HttpMethod.GET, `${this.baseEndPoint}/withdrawals/${Validate.uuid(withdrawalId)}`)
 			.map(data => this.transportManager.processResponse(data, Model.Withdrawal, DataKeyValues.Withdrawal))
 			.catch(this.catchErrorHandler);
 	}

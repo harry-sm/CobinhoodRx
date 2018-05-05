@@ -6,6 +6,7 @@ import { TransportManager } from '../../Helpers/TransportManager';
 import { HttpMethod } from '../../Enum/HttpMethod';
 import { PlaceOrderTypeValue } from '../../Enum/PlaceOrderTypeValue';
 import { ITrade } from '../../Interfaces/ITrade';
+import Validate from '../../Helpers/Validator';
 
 export class TradeAPI implements ITrade {
 	private apiVersion: string;
@@ -19,13 +20,13 @@ export class TradeAPI implements ITrade {
 	}
 
 	public getOrder(orderId: string): Observable<Model.Order> {
-		return this.transportManager.privateRequest(HttpMethod.GET, `${this.baseEndPoint}/orders/${orderId}`)
+		return this.transportManager.privateRequest(HttpMethod.GET, `${this.baseEndPoint}/orders/${Validate.uuid(orderId)}`)
 			.map(data => this.transportManager.processResponse(data, Model.Order, DataKeyValues.Order))
 			.catch(this.catchErrorHandler);
 	}
 
 	public getOrderTrades(orderId: string): Observable<Model.OrderTrade[]> {
-		return this.transportManager.privateRequest(HttpMethod.GET, `${this.baseEndPoint}/orders/${orderId}/trades`)
+		return this.transportManager.privateRequest(HttpMethod.GET, `${this.baseEndPoint}/orders/${Validate.uuid(orderId)}/trades`)
 			.map(data => this.transportManager.processResponse(data, Model.OrderTrade, DataKeyValues.Trades))
 			.catch(this.catchErrorHandler);
 	}
@@ -58,7 +59,7 @@ export class TradeAPI implements ITrade {
 	}
 
 	public modifyOrder(orderId: string, price: number, size: number): Observable<boolean> {
-		return this.transportManager.privateRequest(HttpMethod.PUT, `${this.baseEndPoint}/orders/${orderId}`, {
+		return this.transportManager.privateRequest(HttpMethod.PUT, `${this.baseEndPoint}/orders/${Validate.uuid(orderId)}`, {
 			price: price.toString(),
 			size: size.toString()
 		})
@@ -67,7 +68,7 @@ export class TradeAPI implements ITrade {
 	}
 
 	public cancelOrder(orderId: string): Observable<boolean> {
-		return this.transportManager.privateRequest(HttpMethod.DELETE, `${this.baseEndPoint}/orders/${orderId}`)
+		return this.transportManager.privateRequest(HttpMethod.DELETE, `${this.baseEndPoint}/orders/${Validate.uuid(orderId)}`)
 			.map(data => this.transportManager.processResponse(data))
 			.catch(this.catchErrorHandler);
 	}
@@ -82,7 +83,7 @@ export class TradeAPI implements ITrade {
 	}
 
 	public getTrade(tradeId: string): Observable<Model.Trade> {
-		return this.transportManager.privateRequest(HttpMethod.GET, `${this.baseEndPoint}/trades/${tradeId}`)
+		return this.transportManager.privateRequest(HttpMethod.GET, `${this.baseEndPoint}/trades/${Validate.uuid(tradeId)}`)
 			.map(data => this.transportManager.processResponse(data, Model.Trade, DataKeyValues.Trade))
 			.catch(this.catchErrorHandler);
 	}
