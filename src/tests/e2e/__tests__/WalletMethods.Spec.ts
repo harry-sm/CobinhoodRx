@@ -41,7 +41,6 @@ describe('Wallet Methods', () => {
 		it('should return a list containing balance history', done => {
 			cbrx.Wallet.getLedger('ETH')
 				.subscribe(data => {
-					// console.log(data);
 					expect(data[0]).toEqual(
 						expect.objectContaining({
 							Action: expect.any(String),
@@ -85,7 +84,6 @@ describe('Wallet Methods', () => {
 		it('should return a list containing withdraw address data', done => {
 			cbrx.Wallet.getWithdrawalAddresses('ETH')
 				.subscribe(data => {
-					// console.log(data);
 					expect(data).toEqual(
 						expect.arrayContaining([{
 							Id: expect.any(String),
@@ -108,7 +106,6 @@ describe('Wallet Methods', () => {
 		it('should return withdrawal data', done => {
 			cbrx.Wallet.getWithdrawal('f7e9f50c-563c-4caa-9054-386bafb60c40')
 				.subscribe(data => {
-					// console.log(data);
 					expect(data).toEqual(
 						expect.objectContaining({
 							WithdrawalId: expect.any(String),
@@ -138,7 +135,6 @@ describe('Wallet Methods', () => {
 		it('should return list of widthdrawals', done => {
 			cbrx.Wallet.getAllWithdrawals()
 				.subscribe(data => {
-					// console.log(data);
 					expect(data).toEqual(
 						expect.arrayContaining([{
 							WithdrawalId: expect.any(String),
@@ -168,7 +164,6 @@ describe('Wallet Methods', () => {
 		it('should return deposit data', done => {
 			cbrx.Wallet.getDeposit('2600c655-31e5-47e2-ade3-10593ea45581')
 				.subscribe(data => {
-					// console.log(data);
 					expect(data).toEqual(
 						expect.objectContaining({
 							DepositId: expect.any(String),
@@ -196,7 +191,6 @@ describe('Wallet Methods', () => {
 		it('should return a list of deposits', done => {
 			cbrx.Wallet.getAllDeposits()
 				.subscribe(data => {
-					// console.log(data);
 					expect(data).toEqual(
 						expect.arrayContaining([{
 							DepositId: expect.any(String),
