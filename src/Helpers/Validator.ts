@@ -12,7 +12,7 @@ export class Validator {
 		if (isValidUUID(val)) {
 			return val;
 		}
-		throw new Error(`Ivalid Id: ${val}.`);
+		throw new Error(`Invalid Id: ${val}.`);
 	}
 
 	public queryObject(obj) {
