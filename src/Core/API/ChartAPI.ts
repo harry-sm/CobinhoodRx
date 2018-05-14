@@ -1,7 +1,8 @@
 
 import * as Model from '../../Model';
 import { DataKeyValues } from '../../Enum/DataKeys';
-import { Observable } from 'rxjs/Observable';
+import { Observable, throwError as observableThrowError } from 'rxjs';
+import { map, catchError } from 'rxjs/operators';
 import { TransportManager } from '../../Helpers/TransportManager';
 import { HttpMethod } from '../../Enum/HttpMethod';
 import { TimeframeValue } from '../../Enum/TimeframeValue';
@@ -29,12 +30,13 @@ export class ChartAPI implements IChart {
 			start_time: (startPeriod) ? startPeriod.valueOf() : undefined,
 			end_time: (endPeriod) ? endPeriod.valueOf() : undefined,
 			timeframe
-		})
-			.map(data => this.transportManager.processResponse(data, Model.Candle, DataKeyValues.Candles))
-			.catch(this.catchErrorHandler);
+		}).pipe(
+			map(data => this.transportManager.processResponse(data, Model.Candle, DataKeyValues.Candles)),
+			catchError(this.catchErrorHandler)
+		);
 	}
 
 	private catchErrorHandler(res: Error) {
-		return Observable.throw(res);
+		return observableThrowError(res);
 	}
 }

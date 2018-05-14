@@ -1,6 +1,5 @@
-import { Observable } from 'rxjs';
+import {Observable, from, throwError as observableThrowError} from 'rxjs';
 import fetch from 'node-fetch';
-
 import { ApiResponse } from '../Model';
 import { LogTypeValue } from '../Enum';
 import { Logger } from '../Helpers/Logger';
@@ -19,14 +18,14 @@ export class HttpClient {
 					.then((json: ApiResponse) => {
 
 						const semiProcessedResponse = Object.assign(response, json);
-						Logger.Stream.write(LogTypeValue.Debug, `Response: ${JSON.stringify(semiProcessedResponse)}`);
+						Logger.Stream.write(LogTypeValue.Debug, `Response: ${JSON.stringify(semiProcessedResponse, null, 3)}`);
 						return semiProcessedResponse;
 					});
 			});
 		promise.catch(error => {
 			Logger.Stream.write(LogTypeValue.Error, `HTTP Request Failed. URL: ${url}`);
-			return Observable.throw(error);
+			return observableThrowError(error);
 		});
-		return Observable.fromPromise(promise);
+		return from(promise);
 	}
 }

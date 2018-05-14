@@ -8,7 +8,7 @@ export {
 	LogTypeValue,
 	HttpMethod
 } from './Enum';
-import './Extentions';
+export { IntervalTime } from './Extentions';
 
 import * as Model from './Model';
 export { Model };

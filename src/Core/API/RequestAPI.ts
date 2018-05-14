@@ -1,9 +1,10 @@
 
-import { Observable } from 'rxjs/Observable';
-import { TransportManager } from '../../Helpers/TransportManager';
+import { ApiResponse } from '../../Model';
 import { HttpMethod } from '../../Enum/HttpMethod';
 import { IRequest } from '../../Interfaces/IRequest';
-import { ApiResponse } from '../../Model';
+import { TransportManager } from '../../Helpers/TransportManager';
+import { Observable, throwError as observableThrowError } from 'rxjs';
+import { catchError, map } from 'rxjs/operators';
 
 export class RequestAPI implements IRequest {
 
@@ -17,11 +18,13 @@ export class RequestAPI implements IRequest {
 		useCredentials: boolean = false
 	): Observable<ApiResponse> {
 		return this.transportManager.prepareRequest(httpMethod, url, queryOptions, useCredentials)
-			.map((data: any) => data)
-			.catch(this.catchErrorHandler);
+			.pipe(
+				map((data: any) => data),
+				catchError(this.catchErrorHandler)
+			);
 	}
 
 	private catchErrorHandler(res: Error) {
-		return Observable.throw(res);
+		return observableThrowError(res);
 	}
 }

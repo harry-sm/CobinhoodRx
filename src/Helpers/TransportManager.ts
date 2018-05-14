@@ -1,4 +1,3 @@
-import { Observable } from 'rxjs';
 import { Utilities } from './Utilities';
 import nonceManager from './NounceManager';
 import { HttpClient } from '../Connection/HttpClient';
@@ -6,6 +5,7 @@ import { DefaultSettings } from '../Model/DefaultSettings';
 import { HttpMethod } from '../Enum/HttpMethod';
 import { JsonConvert } from 'json2typescript';
 import * as Model from '../Model';
+import { Observable, throwError as observableThrowError } from 'rxjs';
 
 export class TransportManager {
 	private transportOptions;
@@ -48,7 +48,7 @@ export class TransportManager {
 			this.config.token === null &&
 			useCredentials
 		) {
-			return Observable.throw(new Error('No API Token Found!'));
+			return observableThrowError(new Error('No API Token Found!'));
 		}
 
 		let opts = Object.assign({}, this.transportOptions);

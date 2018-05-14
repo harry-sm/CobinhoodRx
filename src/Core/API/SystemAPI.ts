@@ -1,10 +1,10 @@
-
 import * as Model from '../../Model';
 import { DataKeyValues } from '../../Enum/DataKeys';
-import { Observable } from 'rxjs/Observable';
 import { TransportManager } from '../../Helpers/TransportManager';
 import { HttpMethod } from '../../Enum/HttpMethod';
 import { ISystem } from '../../Interfaces/ISystem';
+import { Observable, throwError as observableThrowError } from 'rxjs';
+import { map, catchError } from 'rxjs/operators';
 
 export class SystemAPI implements ISystem {
 	private apiVersion: string;
@@ -19,17 +19,21 @@ export class SystemAPI implements ISystem {
 
 	public getSystemTime(): Observable<Model.SystemTime> {
 		return this.transportManager.publicRequest(HttpMethod.GET, `${this.baseEndPoint}/time`)
-			.map(data => this.transportManager.processResponse(data, Model.SystemTime))
-			.catch(this.catchErrorHandler);
+			.pipe(
+				map(data => this.transportManager.processResponse(data, Model.SystemTime)),
+				catchError(this.catchErrorHandler)
+			);
 	}
 
 	public getSystemInfo(): Observable<Model.SystemInfo> {
 		return this.transportManager.publicRequest(HttpMethod.GET, `${this.baseEndPoint}/info`)
-			.map(data => this.transportManager.processResponse(data, Model.SystemInfo, DataKeyValues.systemInfo))
-			.catch(this.catchErrorHandler);
+			.pipe(
+				map(data => this.transportManager.processResponse(data, Model.SystemInfo, DataKeyValues.systemInfo)),
+				catchError(this.catchErrorHandler)
+			);
 	}
 
 	private catchErrorHandler(res: Error) {
-		return Observable.throw(res);
+		return observableThrowError(res);
 	}
 }
