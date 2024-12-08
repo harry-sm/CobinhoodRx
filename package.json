@@ -56,7 +56,7 @@
 	},
 	"devDependencies": {
 		"@types/jest": "22.2.3",
-		"@types/node": "9.6.7",
+		"@types/node": "9.6.61",
 		"@types/node-fetch": "1.6.9",
 		"dotenv": "5.0.1",
 		"husky": "0.14.3",
